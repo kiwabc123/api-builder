@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "method": "POST",
+    "path": "/users",
+    "type": "database",
+    "query": "INSERT INTO users (name) VALUES (?)"
+  },
+  {
+    "id": 2,
+    "method": "GET",
+    "path": "/users",
+    "type": "database",
+    "query": "SELECT * FROM users"
+  },
+  {
+    "id": 3,
+    "method": "POST",
+    "path": "/wallets",
+    "type": "database",
+    "query": "INSERT INTO wallets (user_id, name) VALUES (?, ?)"
+  },
+  {
+    "id": 4,
+    "method": "GET",
+    "path": "/wallets",
+    "type": "database",
+    "query": "SELECT wallets.id, wallets.name, users.name AS user_name FROM wallets JOIN users ON wallets.user_id = users.id"
+  }
+]
